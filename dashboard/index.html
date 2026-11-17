@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d12">
+  <title>Nightwatch — Token launch radar</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Nightwatch home"><span class="mark">N<span>·</span></span><span>NIGHTWATCH<small>LAUNCH RADAR / SNAPSHOT <b id="as-of">—</b></small></span></a>
+      <div class="topmeta"><span class="live-dot"></span><span>LOCAL DATASET</span><span class="sep">/</span><span>NO TOKEN RECORDED ≠ NO TOKEN</span></div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy"><div class="eyebrow"><i></i> EARLY SIGNALS, NOT LAUNCH PREDICTIONS</div><h1>Find the next<br><em>market before it exists.</em></h1><p>Ranked protocols with no token recorded in this snapshot. A value claim from current fundamentals — not a launch forecast.</p></div>
+        <div class="hero-stamp"><span class="stamp-ring">NW</span><span>FIELD NOTE<br><b id="row-count">—</b> RADAR TARGETS</span></div>
+      </section>
+      <section class="stats" aria-label="Snapshot overview">
+        <div class="stat"><span>RADAR TARGETS</span><strong id="stat-targets">—</strong><small>ranked pre-token records</small></div>
+        <div class="stat"><span>WATCHLIST FLOOR</span><strong id="stat-watch">—</strong><small>all watchlist slugs included</small></div>
+        <div class="stat"><span>BELOW-FLOOR FINDS</span><strong id="stat-early">—</strong><small>under the $50m threshold</small></div>
+        <div class="stat"><span>TOKEN COMPS</span><strong id="stat-live">—</strong><small>reference set · never ranked</small></div>
+      </section>
+      <section class="model-strip">
+        <div class="model-heading"><span class="eyebrow">METHOD / 01</span><h2>How implied value is computed</h2><p>Same formula for every target. Category-level token peers anchor the multiple; the snapshot supplies every factor.</p></div>
+        <div class="factor-list" id="factor-list"></div>
+      </section>
+      <section class="board-section">
+        <div class="section-head"><div><div class="eyebrow">THE RADAR BOARD</div><h2>Pre-token protocols <span id="visible-count"></span></h2></div><div class="board-key"><span class="legend-dot"></span>7D TVL CHANGE</div></div>
+        <div class="toolbar">
+          <div class="chips" role="tablist" aria-label="Filter protocols"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="watch">Watchlist</button><button class="chip" data-filter="early">Below-floor finds</button></div>
+          <label class="select-wrap"><span class="sr-only">Category filter</span><select id="category"><option value="">All categories</option></select></label>
+          <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search protocol or chain" autocomplete="off"></label>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th><button data-sort="rank">RANK <span>↕</span></button></th><th>PROTOCOL</th><th>CATEGORY</th><th><button data-sort="tvl_usd">TVL <span>↕</span></button></th><th><button data-sort="change_7d">7D <span>↕</span></button></th><th><button data-sort="implied_value_usd">IMPLIED VALUE <span>↕</span></button></th><th></th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty hidden">No protocols match this view. Adjust a filter and scan again.</div></div>
+        <div class="table-foot"><span>RANK IS THE MODEL’S CLAIM · CLICK ANY ROW FOR FACTORS + FARM PLAN</span><span id="range-label"></span></div>
+      </section>
+      <section class="comps-section"><div><div class="eyebrow">REFERENCE ONLY</div><h2>Tokenized peer set <span>— not launch targets</span></h2><p>Market-cap / TVL observations used to calibrate category multiples. These records are excluded from the board.</p></div><button id="toggle-comps" class="outline-btn">Show comparables <span>＋</span></button><div id="comps" class="comps-grid hidden"></div></section>
+      <footer><span>NIGHTWATCH <b>·</b> SNAPSHOT RADAR</span><span>Static analysis of one sealed data snapshot. Verify protocol details before acting.</span></footer>
+    </main>
+  </div>
+  <div id="shade" class="shade hidden"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Protocol details"><button id="close" class="close" aria-label="Close details">×</button><div id="detail"></div></aside>
+  <script src="../data.js"></script><script src="app.js"></script>
+</body>
+</html>
