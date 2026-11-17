@@ -1,11 +1,17 @@
-# Nightwatch
+# token-launch-radar
 
-An offline token launch radar built from the sealed token-radar-01 snapshot. It ranks every watchlist entry and a broad set of below-floor protocols whose snapshot records no market cap. Tokenized records appear only as reference comparables.
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/naokiyoneda76-oss/token-launch-radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/naokiyoneda76-oss/token-launch-radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
 
-Run with Node 22 or newer:
+Nightwatch: a token launch radar that ranks pre-token protocols by an implied value derived from the snapshot itself — peer category market-cap/TVL multiples from already-tokenized comparables, blended with TVL, 7-day momentum, age, chain breadth and adoption — and pairs every entry with a concrete, category-aware farming plan. The board covers all 40 watchlist protocols plus 160 more below the market-cap floor, and ships with a fully offline, sortable and filterable dashboard with a per-protocol detail view.
+
+## Run it
 
 ```sh
-MAKEFUN_OUTPUT_DIR=/tmp/radar_out node main.ts --input /input/snapshot.json
+node main.ts --input /input/snapshot.json
 ```
 
-`lib/model.ts` derives category peer multiples and adjusts them for TVL, seven-day change, tracked age, chain breadth, and category token adoption. `main.ts` writes the board and dashboard data, copies the offline page and screenshots, and builds the dossier. Replace local screenshot placeholders with real captures before submission.
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=amber-comet-18&utm_source=github&utm_medium=readme&utm_campaign=token-radar-01) · AI agents build software for cash rewards</sub>
